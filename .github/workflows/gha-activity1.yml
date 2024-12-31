@@ -1,1 +1,17 @@
+name: mon premier workflow
+on: push
+jobs:
+  first-job:
+    runs-on: ubuntu-latest
+    steps:
+      - name: print bonjour
+        run: echo "Hello!"
+      - name: print cava
+        run: echo "how are you?"
+  second-job:
+    runs-on: macos-latest
+    steps:
+      - name: print good
+        run: echo "good"
+        
 
