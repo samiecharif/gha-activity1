@@ -1,0 +1,21 @@
+name: Language Workflow
+
+on:
+  push:
+    branches:
+      - lang
+
+jobs:
+  french_job:
+    if: ${{ vars.LANG == 'FR' }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Print French 
+        run: echo "L'utilisateur ${{ github.actor }} parle français."
+
+  other_job:
+    if: ${{ vars.LANG != 'FR' }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Print English Message
+        run: echo "User  ${{ github.actor }} speaks English"
